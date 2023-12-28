@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import folderData from './folderData.json';
-// Function to return JSON as a promise
+import './FolderStructure.css';
+
 const getFolderData = () => {
   return new Promise(resolve => {
     setTimeout(() => {
@@ -39,7 +40,7 @@ const FolderStructure = () => {
   }, []);
 
   return (
-    <div>
+    <div className='folder-structure'>
       {folderData ? folderData.contents.map((item, index) => (
         <FolderComponent key={index} data={item} />
       )) : <div>Loading...</div>}
